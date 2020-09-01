@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "In deployment-backup script"
+
 ../binary/bbr deployment --target "$BOSH_ENVIRONMENT" \
   --username "$BOSH_CLIENT" \
   --deployment "$DEPLOYMENT_NAME" \
