@@ -46,9 +46,11 @@ if [ ! -z ${OPSMAN_PRIVATE_KEY:+x} ]; then
   ssh_socks_proxy_pid="$!"
   trap cleanup_socks_proxy EXIT
   export BOSH_ALL_PROXY=socks5://localhost:5000
+  echo "testesttest"
   echo "Using BOSH_ALL_PROXY"
   echo "sleeping for 10 secs to establish connection"
   sleep 10s
+  echo "test1test1test1"
 fi
 
 # Set NO_PROXY for BOSH Director
@@ -64,3 +66,10 @@ export BOSH_CA_CERT=$BOSH_CA_CERT_PATH
 export BOSH_ENVIRONMENT
 export BOSH_USERNAME="bbr"
 export BOSH_PRIVATE_KEY
+
+echo $BOSH_CLIENT
+echo $BOSH_CLIENT_SECRET
+echo $BOSH_CA_CERT_PATH
+echo $BOSH_ENVIRONMENT
+echo $BOSH_PRIVATE_KEY
+
