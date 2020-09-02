@@ -2,8 +2,11 @@
 set -x
 
 echo "In deployment-backup script"
+BOSH_LOG_LEVEL=debug
+
 
 ../binary/bbr deployment --target "$BOSH_ENVIRONMENT" \
+  --debug \
   --username "$BOSH_CLIENT" \
   --deployment "$DEPLOYMENT_NAME" \
   --ca-cert "$BOSH_CA_CERT_PATH" \
